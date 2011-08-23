@@ -36,4 +36,12 @@ public abstract class Duck {
         return flybehaviour;
     }
 
+    public QuackBehaviour getQuackBehaviour() {
+        return quackBehaviour;
+    }
+
+    public void setQuackBehaviour(QuackBehaviour quackBehaviour) {
+        this.quackBehaviour = quackBehaviour;
+    }
+
 }
