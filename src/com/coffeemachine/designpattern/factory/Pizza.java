@@ -12,19 +12,15 @@ import java.util.List;
 public abstract class Pizza {
 
     protected String name;
-    protected String dough;
-    protected String sauce;
+    protected Dough dough;
+    protected Sauce sauce;
     protected List<String> toppings = new ArrayList<String>();
+    protected Veggies veggies[];
+    protected Cheese cheese;
+    protected Pepperoni pepperoni;
+    protected Clam clam;
 
-    public void prepare() {
-        System.out.println("Preparing ..." + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppings : ");
-        for(String topping : toppings) {
-            System.out.println(" "  + topping);
-        }
-    }
+    public abstract void prepare();
 
     public void bake() {
         System.out.println("Bake for 25 minutes at 350");
@@ -46,19 +42,19 @@ public abstract class Pizza {
         this.name = name;
     }
 
-    public String getDough() {
+    public Dough getDough() {
         return dough;
     }
 
-    public void setDough(String dough) {
+    public void setDough(Dough dough) {
         this.dough = dough;
     }
 
-    public String getSauce() {
+    public Sauce getSauce() {
         return sauce;
     }
 
-    public void setSauce(String sauce) {
+    public void setSauce(Sauce sauce) {
         this.sauce = sauce;
     }
 

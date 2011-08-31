@@ -11,13 +11,17 @@ public class NYPizzaStore extends PizzaStore {
 
     @Override
     protected Pizza createPizza(String type) {
+        Pizza pizza = null;
+        PizzaIngredientFactory pizzaIngredientFactory = new NYPizzaIngredientFactory();
         if(type.equals("cheese")) {
-            return new NYStyleCheesePizza();
+            pizza = new CheesePizza(pizzaIngredientFactory);
+            pizza.setName("NY cheese style pizza");
         } else if (type.equals("veggie")) {
-            return new NYStyleVeggiePizza();
-        } else {
-            return new NYStyleCheesePizza();
+            pizza = new VeggiePizza(pizzaIngredientFactory);
+            pizza.setName("NY Veggie pizza");
         }
+
+        return pizza;
     }
 
 }
