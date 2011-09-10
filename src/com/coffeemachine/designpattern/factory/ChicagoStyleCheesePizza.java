@@ -11,9 +11,13 @@ public class ChicagoStyleCheesePizza extends Pizza {
 
     public ChicagoStyleCheesePizza() {
         name = "Chicago Style deep dish cheese pizza";
-        dough = "Extra thick crust dough";
-        sauce = "Plum tomato sauce";
+        dough = new Dough();
+        sauce = new Sauce();
         toppings.add("Shredded mozarella Cheese");
+    }
+
+    @Override
+    public void prepare() {
     }
 
     public void cut() {

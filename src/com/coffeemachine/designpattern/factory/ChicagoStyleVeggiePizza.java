@@ -11,8 +11,12 @@ public class ChicagoStyleVeggiePizza extends Pizza {
 
     public ChicagoStyleVeggiePizza() {
         name = "Chicago style veggie pizza";
-        dough = "Thick crust dough from Chicago";
-        sauce = "Chicago veggie sauce";
+        dough = new Dough();
+        sauce = new Sauce();
         toppings.add("No more cheese...ieuurkk!!!");
+    }
+
+    @Override
+    public void prepare() {
     }
 }
