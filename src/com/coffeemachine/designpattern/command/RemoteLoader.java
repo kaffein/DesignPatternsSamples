@@ -11,6 +11,7 @@ public class RemoteLoader {
 
     public static void main(String[] args) {
         RemoteControl remoteControl = new RemoteControl();
+        RemoteControlWithUndo remoteControlWithUndo = new RemoteControlWithUndo();
 
         Light livingRoomLight = new Light("Living room light");
         Light kitchenLight = new Light("Kitchen light");
@@ -39,6 +40,18 @@ public class RemoteLoader {
             remoteControl.onButtonWasPushed(i);
             remoteControl.offButtonWasPushed(i);
         }
+
+        // TESTING UNDO FEATURE
+        System.out.println("****** TESTING UNDO FEATURE *******");
+        remoteControlWithUndo.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControlWithUndo.onButtonWasPushed(0);
+        remoteControlWithUndo.offButtonWasPushed(0);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonWasPushed();
+        remoteControlWithUndo.offButtonWasPushed(0);
+        remoteControlWithUndo.onButtonWasPushed(0);
+        System.out.println(remoteControlWithUndo);
+        remoteControlWithUndo.undoButtonWasPushed();
 
     }
 
