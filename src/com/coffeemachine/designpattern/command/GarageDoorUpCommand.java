@@ -17,4 +17,8 @@ public class GarageDoorUpCommand implements Command {
     public void execute() {
         System.out.println("Up garage door!!");
     }
+
+    public void undo() {
+        System.out.println("Down garage door");
+    }
 }
